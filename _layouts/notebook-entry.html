@@ -1,0 +1,17 @@
+---
+layout: notebook
+---
+<article class="entry">
+  <header class="page-heading">
+    <a class="eyebrow back-link" href="{{ page.section | downcase | prepend: '/' | append: '/' | relative_url }}">← {{ page.section }}</a>
+    <h1>{{ page.title }}</h1>
+    <div class="entry-meta">
+      {% if page.date and page.section != 'Work' %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
+      {% if page.status %}<span>{{ page.status }}</span>{% endif %}
+      {% for category in page.categories %}<span>{{ category }}</span>{% endfor %}
+    </div>
+    {% if page.tags.size > 0 %}<ul class="tags">{% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  {% if page.external_url %}<p class="external-reading"><a href="{{ page.external_url }}">Read at {{ page.publication | default: 'the original publication' }} ↗</a></p>{% endif %}
+</article>

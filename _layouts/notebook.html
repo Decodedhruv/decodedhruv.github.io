@@ -1,0 +1,24 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include seo.html %}
+  <meta name="theme-color" content="#f7f5ef">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/notebook.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="Dhruva’s notes" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include notebook-header.html %}
+  <main id="main" class="shell" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer shell">
+    <span>Dhruva Nagesh <span class="footer-dot">·</span> London</span>
+    <span>A small corner of the internet. <a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a></span>
+  </footer>
+</body>
+</html>

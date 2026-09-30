@@ -1,0 +1,13 @@
+---
+title: Notes
+permalink: /notes/
+kicker: The notebook
+description: "Observations, reading notes, photographs, and things worth keeping. In no particular order, except time."
+---
+<div class="archive">
+{% assign notes_by_year = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in notes_by_year %}
+<section aria-labelledby="year-{{ year.name }}"><h2 class="archive-year" id="year-{{ year.name }}">{{ year.name }}</h2>
+{% for item in year.items %}{% include entry-row.html item=item kind='Note' %}{% endfor %}</section>
+{% endfor %}
+</div>

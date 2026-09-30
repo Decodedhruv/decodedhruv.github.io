@@ -1,0 +1,5 @@
+<ul class="elsewhere">
+{% for item in site.data.elsewhere %}{% if item.url and item.url != '' %}
+<li><a href="{{ item.url | relative_url }}">{{ item.title }} <span aria-hidden="true">↗</span></a></li>
+{% endif %}{% endfor %}
+</ul>

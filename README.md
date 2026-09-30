@@ -1,101 +1,150 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Dhruva’s website — Version 0.1
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+A personal notebook built directly from [Academic Pages](https://github.com/academicpages/academicpages.github.io), using Jekyll, Liquid, Sass and Markdown. The original layouts, includes, Sass modules and MIT licence remain available; the active design is in `_layouts/notebook*`, `_includes/notebook*` and `_sass/_notebook.scss`.
 
-# Getting Started
+**Website:** https://decodedhruv.github.io
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Edit site-wide configuration in `_config.yml` and double check that the `url` is the one that you just selected in the previous step and that `repository` reflects the correct path for your repository.
-1. Add your site content, upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+**Custom domain:** not connected. Do not add a CNAME or change DNS until approved.
 
-See more info at https://academicpages.github.io/
+## Everyday editing
 
-### Additional Tutorials
+On GitHub, open a file and use the pencil button to edit it. Save with **Commit changes**. The **Actions → Publish website** run builds and publishes the site, usually within a few minutes. The instructions below use repository-relative paths.
 
-Additional tutorials for working with the Academic Pages template can be found at the following sites:
-- https://jayrobwilliams.com/posts/2020/06/academic-website/
+### 1. Add a Note
 
-## Running locally
+Choose **Add file → Create new file**. Name it `_posts/2026-10-01-a-title-for-the-note.md`. Replace the date and title in this example:
 
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+```markdown
+---
+title: A title for the note
+date: 2026-10-01 10:00:00 +0100
+categories: [notebook]
+tags: [London, transport]
+description: "A short description for the archive."
+selected: false
+---
+Write your note here. Ordinary Markdown works.
 
-1. Clone the repository and made updates as detailed above.
+## A heading
 
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distributions and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try running `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stopping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-chmod -R 777 .
-docker compose up
+A paragraph with *italics*, **bold**, and [a link](https://example.com).
 ```
 
-You should now be able to access the website from `localhost:4000`.
+The filename must start with `YYYY-MM-DD-`. Newest notes appear first. Use `+0100` during British Summer Time and `+0000` in winter. Future-dated notes stay hidden until a build runs after that date (there is no scheduled publishing in v0.1). Use `published: false` in the front matter to hide a draft, then remove that line when ready. Draft source in a public repository is still public; do not put private material there.
 
-### Using the DevContainer in VS Code
+The sample is `_posts/2026-09-30-a-place-for-notes.md`; edit or delete it whenever you like. Tags/categories are displayed as labels in v0.1, not separate filter pages.
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+### 2. Add a Work/project
 
-# Maintenance
+Create `_work/project-name.md`:
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii), and additional maintainers would be welcome.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of the template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize, although [rebasing](https://git-scm.com/docs/git-rebase) the changes from this template will work along with manually [cherry picking](https://git-scm.com/docs/git-cherry-pick) the relevant commits. If you are not comfortable with the Git command line, you can save your various `.yml` configuration files and Markdown files, delete the repository, and fork it again. 
-
+```markdown
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+title: Project name
+order: 2
+status: Work in progress
+description: "A one-sentence description."
+tags: [research, development]
+selected: true
+---
+Describe the project here.
+```
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+`order` controls the Work listing. `selected: true` also puts it on the homepage. The address will be `/work/project-name/`.
+
+### 3. Add an external Writing link
+
+Create `_writing/essay-name.md`:
+
+```markdown
+---
+title: Essay title
+date: 2026-09-30
+publication: Publication name
+external_url: https://example.com/the-essay
+description: "A brief description of the piece."
+selected: true
+---
+```
+
+The Writing listing links directly to the original publication. No need to copy the essay here. Use `selected: false` to leave it off the homepage. To publish an essay locally, omit `external_url` and write below the second `---`.
+
+### 4. Add a photograph
+
+Open `images/notes` on GitHub, choose **Add file → Upload files**, and upload a sensibly sized image (around 1600 pixels wide, ideally below 400 KB). Use a simple filename such as `london-evening.jpg`.
+
+Inside a Note, use:
+
+```markdown
+![A descriptive sentence about what the photograph shows.](/images/notes/london-evening.jpg)
+
+*London, September 2026.*
+```
+
+For a semantic caption and lazy loading:
+
+```html
+<figure>
+  <img src="/images/notes/london-evening.jpg"
+       alt="A descriptive sentence about what is visible."
+       width="1600" height="1067" loading="lazy" decoding="async">
+  <figcaption>London, September 2026. Photograph by Dhruva Nagesh.</figcaption>
+</figure>
+```
+
+Use the image’s actual dimensions and your own caption/credit. No photographs are included in v0.1 because none have been supplied.
+
+### 5. Add a navigation item
+
+Edit `_data/navigation.yml` and add:
+
+```yaml
+  - title: Books
+    url: /books/
+```
+
+Then create `_pages/books.md`:
+
+```markdown
+---
+title: Books
+permalink: /books/
+kicker: Reading & marginalia
+---
+Your text here.
+```
+
+The header follows the order in the navigation file. Keep titles short so the menu remains comfortable on phones.
+
+## Other edits
+
+- Homepage: `_pages/home.html` (the prose is among the HTML tags).
+- About: `_pages/about.md`.
+- Social/contact links: `_data/elsewhere.yml`. Blank URLs stay hidden. Add `mailto:your-address` for Email. Add your Substack/profile URL when ready.
+- CV: upload `cv.pdf` into `images/documents/`, then set the CV URL to `/images/documents/cv.pdf`. This location is public.
+- Research page: `_work/debt-swaps.md`.
+- Colours, spacing and typography: `_sass/_notebook.scss`.
+- Site title, address and collections: `_config.yml`.
+
+No browser JavaScript, third-party fonts, analytics, paid hosting or database are required. The original Academic Pages demo content has been removed. Unused theme components remain in the source for future use.
+
+## Publishing setup (one time)
+
+Use a public GitHub repository named `decodedhruv.github.io`. In **Settings → Pages → Build and deployment**, choose **GitHub Actions**. The included `.github/workflows/pages.yml` publishes every push to `main` or `master`. Keep Custom domain blank. HTTPS is automatic at the GitHub-provided address.
+
+If publishing fails, open the latest run under **Actions → Publish website** and read the failed step. You can run it again with **Run workflow**.
+
+## Local preview (optional)
+
+With Ruby 3.3 and Bundler installed:
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Open http://localhost:4000. Changes to `_config.yml` require restarting the server.
+
+## Credits
+
+Based on Academic Pages, itself derived from Minimal Mistakes by Michael Rose. Original MIT licence retained in `LICENSE`.

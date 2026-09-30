@@ -1,0 +1,9 @@
+{% assign item = include.item %}
+<article class="entry-row">
+  <div class="row-meta">{{ include.kind | default: item.section }}{% if item.date and item.section != 'Work' %}<br><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%b %Y' }}</time>{% endif %}</div>
+  <div><h3><a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.title }} <span aria-hidden="true">↗</span></a></h3>
+  {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+  {% if item.publication %}<span class="publication">{{ item.publication }}</span>{% endif %}
+  {% if item.status == 'Sample entry' %}<span class="sample-label">Sample entry</span>{% endif %}
+  {% if item.tags.size > 0 %}<ul class="tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}</div>
+</article>

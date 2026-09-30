@@ -1,0 +1,36 @@
+---
+layout: notebook
+permalink: /
+description: "I study Politics, Philosophy and Economics at SOAS, University of London. This is a place for my work, writing and things noticed along the way."
+---
+<section class="home-intro" aria-labelledby="intro-title">
+  <p class="eyebrow"><span class="little-star" aria-hidden="true">✳</span> A personal notebook, more or less.</p>
+  <h1 id="intro-title">Dhruva Nagesh<span class="name-period">.</span></h1>
+  <p class="lead">I study Politics, Philosophy and Economics<br class="desktop-break"> at SOAS, University of London.</p>
+  <div class="intro-columns">
+    <p>My interests currently include institutions, political economy, sovereign debt and development, science and innovation, philosophy, cities and infrastructure.</p>
+    <p>Outside that work I’m interested in London, transport systems, history, music, art, opera, photography, maps and various other rabbit holes.</p>
+  </div>
+</section>
+<section class="numbered-section currently" aria-labelledby="currently-title">
+  <div class="section-label"><span class="section-number">01 /</span><h2 id="currently-title">Currently</h2></div>
+  <div><p>In my final year of PPE at SOAS, working on <a href="{{ '/work/debt-swaps/' | relative_url }}">sovereign debt-for-development and debt-for-health swaps</a>.</p><p class="quiet">Thinking about institutions, development, and what makes change possible.</p></div>
+</section>
+<section class="numbered-section selected" aria-labelledby="selected-title">
+  <div class="section-label"><span class="section-number">02 /</span><h2 id="selected-title">Selected things</h2></div>
+  <div>{% assign selected_work = site.work | where: 'selected', true %}{% for item in selected_work %}{% include entry-row.html item=item kind='Research / in progress' %}{% endfor %}
+  {% assign selected_writing = site.writing | where: 'selected', true %}{% for item in selected_writing %}{% include entry-row.html item=item kind='Writing' %}{% endfor %}
+  {% assign selected_notes = site.posts | where: 'selected', true %}{% for item in selected_notes %}{% include entry-row.html item=item kind='Note' %}{% endfor %}
+  <a class="small-link" href="{{ '/notes/' | relative_url }}">From the notebook →</a></div>
+</section>
+<section class="preoccupations" aria-labelledby="preoccupations-title">
+  <div class="section-label"><span class="section-number">03 /</span><h2 id="preoccupations-title">Current preoccupations</h2></div>
+  <p class="margin-note">An incomplete index of rabbit holes.</p>
+  <div class="interest-grid">
+    <div class="interest"><span class="interest-number">I.</span><svg viewBox="0 0 120 80" aria-hidden="true"><path d="M15 61H105M22 57V30M41 57V30M60 57V30M79 57V30M98 57V30M15 25L60 6L105 25ZM12 67H108"/></svg><h3>Institutions &amp;<br>political economy</h3><p>Rules, power, possibility.</p></div>
+    <div class="interest"><span class="interest-number">II.</span><svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 55H42L72 25H110M10 25H40L70 55H110"/><circle cx="56" cy="41" r="6"/><circle cx="88" cy="25" r="4"/><circle cx="25" cy="55" r="4"/></svg><h3>Cities &amp;<br>the things between</h3><p>London, transport, maps.</p></div>
+    <div class="interest"><span class="interest-number">III.</span><svg viewBox="0 0 120 80" aria-hidden="true"><circle cx="60" cy="39" r="30"/><circle cx="60" cy="39" r="21"/><circle cx="60" cy="39" r="11"/><circle cx="60" cy="39" r="2"/><path d="M90 10L76 32"/></svg><h3>Looking &amp;<br>listening</h3><p>Music, art, opera, photographs.</p></div>
+    <div class="interest"><span class="interest-number">IV.</span><svg viewBox="0 0 120 80" aria-hidden="true"><path d="M60 19Q38 8 13 16V66Q38 58 60 69Q82 58 107 66V16Q82 8 60 19V69M24 27Q40 24 50 29M24 38Q40 35 50 40M70 29Q84 24 96 27M70 40Q84 35 96 38"/></svg><h3>Ideas &amp;<br>other detours</h3><p>Philosophy, history, science.</p></div>
+  </div>
+</section>
+<section class="numbered-section elsewhere-section" aria-labelledby="elsewhere-title"><div class="section-label"><span class="section-number">04 /</span><h2 id="elsewhere-title">Elsewhere</h2></div><div>{% include elsewhere.html %}</div></section>

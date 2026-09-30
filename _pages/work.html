@@ -1,0 +1,7 @@
+---
+title: Work
+permalink: /work/
+kicker: Research & projects
+description: "Questions I’m spending time with."
+---
+<div class="archive">{% assign projects = site.work | sort: 'order' %}{% for item in projects %}{% include entry-row.html item=item kind='Research' %}{% endfor %}</div>
