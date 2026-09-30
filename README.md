@@ -8,7 +8,7 @@ A personal notebook built directly from [Academic Pages](https://github.com/acad
 
 ## Everyday editing
 
-On GitHub, open a file and use the pencil button to edit it. Save with **Commit changes**. The **Actions → Publish website** run builds and publishes the site, usually within a few minutes. The instructions below use repository-relative paths.
+On GitHub, open a file and use the pencil button to edit it. Save with **Commit changes**. The **Actions → pages build and deployment** run builds and publishes the site, usually within a few minutes. The instructions below use repository-relative paths.
 
 ### 1. Add a Note
 
@@ -130,9 +130,9 @@ No browser JavaScript, third-party fonts, analytics, paid hosting or database ar
 
 ## Publishing setup (one time)
 
-Use a public GitHub repository named `decodedhruv.github.io`. In **Settings → Pages → Build and deployment**, choose **GitHub Actions**. The included `.github/workflows/pages.yml` publishes every push to `main` or `master`. Keep Custom domain blank. HTTPS is automatic at the GitHub-provided address.
+Use a public GitHub repository named `decodedhruv.github.io`. In **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then **master** and **/ (root)**. GitHub’s built-in Jekyll builder publishes each push. Keep Custom domain blank. HTTPS is automatic at the GitHub-provided address.
 
-If publishing fails, open the latest run under **Actions → Publish website** and read the failed step. You can run it again with **Run workflow**.
+If publishing fails, open the latest run under **Actions → pages build and deployment** and read the failed step. You can run it again with **Re-run all jobs**.
 
 ## Local preview (optional)
 
