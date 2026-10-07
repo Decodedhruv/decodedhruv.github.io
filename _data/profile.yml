@@ -2,4 +2,4 @@
 image: ""
 image_alt: "Dhruva Nagesh"
 # Set a verified Formspree endpoint to enable the contact form.
-contact_endpoint: ""
+contact_endpoint: "https://formspree.io/f/xgaoakrz"
