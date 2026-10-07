@@ -1,150 +1,93 @@
-# Dhruva’s website — Version 0.1
+# Dhruva Nagesh — personal website
 
-A personal notebook built directly from [Academic Pages](https://github.com/academicpages/academicpages.github.io), using Jekyll, Liquid, Sass and Markdown. The original layouts, includes, Sass modules and MIT licence remain available; the active design is in `_layouts/notebook*`, `_includes/notebook*` and `_sass/_notebook.scss`.
+Built directly from Academic Pages using Jekyll, Markdown, Liquid, and Sass.
+Live at https://decodedhruv.github.io. The custom domain is not connected.
 
-**Website:** https://decodedhruv.github.io
+## Edit the website
 
-**Custom domain:** not connected. Do not add a CNAME or change DNS until approved.
+Open a file on GitHub, click the pencil, and choose **Commit changes**. GitHub Pages builds and publishes automatically from the `master` branch.
 
-## Everyday editing
+- Homepage: `_pages/home.html`.
+- About: `_pages/about.md`.
+- Header navigation: `_data/navigation.yml`. Writing goes to Substack; LinkedIn goes to the supplied profile.
+- Elsewhere links: `_data/elsewhere.yml`. Blank URLs remain hidden.
+- Styling: `_sass/_notebook.scss`.
+- Portrait and form settings: `_data/profile.yml`.
 
-On GitHub, open a file and use the pencil button to edit it. Save with **Commit changes**. The **Actions → pages build and deployment** run builds and publishes the site, usually within a few minutes. The instructions below use repository-relative paths.
-
-### 1. Add a Note
-
-Choose **Add file → Create new file**. Name it `_posts/2026-10-01-a-title-for-the-note.md`. Replace the date and title in this example:
-
-```markdown
----
-title: A title for the note
-date: 2026-10-01 10:00:00 +0100
-categories: [notebook]
-tags: [London, transport]
-description: "A short description for the archive."
-selected: false
----
-Write your note here. Ordinary Markdown works.
-
-## A heading
-
-A paragraph with *italics*, **bold**, and [a link](https://example.com).
-```
-
-The filename must start with `YYYY-MM-DD-`. Newest notes appear first. Use `+0100` during British Summer Time and `+0000` in winter. Future-dated notes stay hidden until a build runs after that date (there is no scheduled publishing in v0.1). Use `published: false` in the front matter to hide a draft, then remove that line when ready. Draft source in a public repository is still public; do not put private material there.
-
-The sample is `_posts/2026-09-30-a-place-for-notes.md`; edit or delete it whenever you like. Tags/categories are displayed as labels in v0.1, not separate filter pages.
-
-### 2. Add a Work/project
+## Add public work
 
 Create `_work/project-name.md`:
 
 ```markdown
 ---
-title: Project name
-order: 2
-status: Work in progress
-description: "A one-sentence description."
-tags: [research, development]
+title: Project title
+order: 3
+kind: Game / article / collaboration / tool
 selected: true
+external_url: https://example.com/your-project
+publication: Where it is hosted
+description: "A short description."
+tags: [philosophy]
 ---
-Describe the project here.
 ```
 
-`order` controls the Work listing. `selected: true` also puts it on the homepage. The address will be `/work/project-name/`.
+`order` controls listing order. `selected: true` includes it on the homepage. The listing links straight to `external_url`. For a local project page, omit `external_url` and write Markdown beneath the second `---`. If you want a date displayed, add `date: 2026-10-07` and `show_date: true`.
 
-### 3. Add an external Writing link
+Keep work that is not approved for public use out of this public repository. The previously displayed research project was removed from the current site/source, not from Git history.
 
-Create `_writing/essay-name.md`:
+## Writing
+
+The header Writing link goes straight to Substack. Add newspaper articles to Public Work using the example above. To change the Substack address, update `_data/navigation.yml`, `_data/elsewhere.yml`, and the links in the homepage/About/Writing page.
+
+## Add a portrait or photograph
+
+Upload a photo under `images/`, then set `image: /images/your-photo.jpg` and descriptive `image_alt` text in `_data/profile.yml`. A portrait around 600 × 750 pixels works well. The placeholder disappears automatically.
+
+For another photo in Markdown:
 
 ```markdown
----
-title: Essay title
-date: 2026-09-30
-publication: Publication name
-external_url: https://example.com/the-essay
-description: "A brief description of the piece."
-selected: true
----
+![Describe what the image shows.](/images/your-photo.jpg)
+
+*Your caption here.*
 ```
 
-The Writing listing links directly to the original publication. No need to copy the essay here. Use `selected: false` to leave it off the homepage. To publish an essay locally, omit `external_url` and write below the second `---`.
+## Add a navigation item
 
-### 4. Add a photograph
-
-Open `images/notes` on GitHub, choose **Add file → Upload files**, and upload a sensibly sized image (around 1600 pixels wide, ideally below 400 KB). Use a simple filename such as `london-evening.jpg`.
-
-Inside a Note, use:
-
-```markdown
-![A descriptive sentence about what the photograph shows.](/images/notes/london-evening.jpg)
-
-*London, September 2026.*
-```
-
-For a semantic caption and lazy loading:
-
-```html
-<figure>
-  <img src="/images/notes/london-evening.jpg"
-       alt="A descriptive sentence about what is visible."
-       width="1600" height="1067" loading="lazy" decoding="async">
-  <figcaption>London, September 2026. Photograph by Dhruva Nagesh.</figcaption>
-</figure>
-```
-
-Use the image’s actual dimensions and your own caption/credit. No photographs are included in v0.1 because none have been supplied.
-
-### 5. Add a navigation item
-
-Edit `_data/navigation.yml` and add:
+Add to `_data/navigation.yml`:
 
 ```yaml
-  - title: Books
-    url: /books/
+  - title: Gallery
+    url: /gallery/
 ```
 
-Then create `_pages/books.md`:
+Create `_pages/gallery.md`:
 
 ```markdown
 ---
-title: Books
-permalink: /books/
-kicker: Reading & marginalia
+title: Gallery
+permalink: /gallery/
 ---
-Your text here.
+Your text and images here.
 ```
 
-The header follows the order in the navigation file. Keep titles short so the menu remains comfortable on phones.
+For an external destination, use its full URL and `external: true`.
 
-## Other edits
+## Contact form
 
-- Homepage: `_pages/home.html` (the prose is among the HTML tags).
-- About: `_pages/about.md`.
-- Social/contact links: `_data/elsewhere.yml`. Blank URLs stay hidden. Add `mailto:your-address` for Email. Add your Substack/profile URL when ready.
-- CV: upload `cv.pdf` into `images/documents/`, then set the CV URL to `/images/documents/cv.pdf`. This location is public.
-- Research page: `_work/debt-swaps.md`.
-- Colours, spacing and typography: `_sass/_notebook.scss`.
-- Site title, address and collections: `_config.yml`.
+The complete accessible HTML form is `_includes/contact.html`. It includes first name, optional last name, email, and message fields, native browser validation, and a privacy notice. It needs no browser JavaScript.
 
-No browser JavaScript, third-party fonts, analytics, paid hosting or database are required. The original Academic Pages demo content has been removed. Unused theme components remain in the source for future use.
+Create a free Formspree form and verify its destination inbox. Put the supplied `https://formspree.io/f/...` endpoint in `contact_endpoint` in `_data/profile.yml`. Do not put passwords, API secrets, or private account data in the repository. While the endpoint is blank, the homepage provides a working LinkedIn contact link instead of a form that cannot deliver.
 
-## Publishing setup (one time)
+After activation, submit a test yourself and verify both Formspree’s confirmation and actual receipt in the inbox. A successful browser submission alone does not prove email delivery. Spam protection is managed in Formspree.
 
-Use a public GitHub repository named `decodedhruv.github.io`. In **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then **master** and **/ (root)**. GitHub’s built-in Jekyll builder publishes each push. Keep Custom domain blank. HTTPS is automatic at the GitHub-provided address.
+## Notes (available if needed later)
 
-If publishing fails, open the latest run under **Actions → pages build and deployment** and read the failed step. You can run it again with **Re-run all jobs**.
+The Jekyll Markdown post system is retained, but the sample note has been removed and Notes is no longer in the menu. To add a post, create `_posts/YYYY-MM-DD-title.md` with title, date, tags, and Markdown content. Add a listing page/menu link when ready. Do not keep confidential drafts in a public repository.
 
-## Local preview (optional)
+## Hosting
 
-With Ruby 3.3 and Bundler installed:
-
-```sh
-bundle install
-bundle exec jekyll serve
-```
-
-Open http://localhost:4000. Changes to `_config.yml` require restarting the server.
+GitHub **Settings → Pages → Deploy from a branch → master → / (root)**. Custom domain remains blank. Build status is under **Actions → pages build and deployment**.
 
 ## Credits
 
-Based on Academic Pages, itself derived from Minimal Mistakes by Michael Rose. Original MIT licence retained in `LICENSE`.
+Adapted from Academic Pages, derived from Minimal Mistakes by Michael Rose. Original MIT license retained in `LICENSE`. Original theme components remain available in the source.

@@ -1,0 +1,7 @@
+---
+title: Public Work
+permalink: /public-work/
+kicker: Things out in the world
+description: "Games, articles, collaborations, and tools. A growing collection."
+---
+<div class="archive">{% assign projects = site.work | sort: 'order' %}{% for item in projects %}{% include entry-row.html item=item kind=item.kind %}{% endfor %}</div>

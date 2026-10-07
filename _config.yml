@@ -1,9 +1,9 @@
 # Personal adaptation of Academic Pages. SiteGround/custom domain is not connected.
-locale: en-GB
+locale: en-US
 title: Dhruva Nagesh
 title_separator: "·"
 name: Dhruva Nagesh
-description: "Politics, philosophy, economics, and things noticed along the way. A personal notebook by Dhruva Nagesh."
+description: "Politics, philosophy, economics, and things noticed along the way. Public work and writing by Dhruva Nagesh."
 url: https://decodedhruv.github.io
 baseurl: ""
 repository: decodedhruv/decodedhruv.github.io
@@ -66,7 +66,7 @@ kramdown:
 collections:
   work:
     output: true
-    permalink: /work/:path/
+    permalink: /public-work/:path/
   writing:
     output: true
     permalink: /writing/:path/
@@ -86,7 +86,7 @@ defaults:
       type: work
     values:
       layout: notebook-entry
-      section: Work
+      section: Public Work
   - scope:
       path: ""
       type: writing

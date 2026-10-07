@@ -1,0 +1,5 @@
+{% if site.data.profile.image != '' and site.data.profile.image %}
+<figure class="portrait"><img src="{{ site.data.profile.image | relative_url }}" alt="{{ site.data.profile.image_alt | escape }}" width="600" height="750" decoding="async"></figure>
+{% else %}
+<div class="portrait portrait-placeholder" role="img" aria-label="Portrait placeholder; photo to come"><span aria-hidden="true">δ</span><p>A photograph, eventually.</p></div>
+{% endif %}

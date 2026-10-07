@@ -1,12 +1,13 @@
-# Add or reorder header links here.
 main:
   - title: Home
     url: /
-  - title: Notes
-    url: /notes/
-  - title: Work
-    url: /work/
+  - title: Public Work
+    url: /public-work/
   - title: Writing
-    url: /writing/
+    url: https://substack.com/@dhruvanagesh
+    external: true
   - title: About
     url: /about/
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/dhruvanagesh/
+    external: true

@@ -3,10 +3,10 @@ layout: notebook
 ---
 <article class="entry">
   <header class="page-heading">
-    <a class="eyebrow back-link" href="{{ page.section | downcase | prepend: '/' | append: '/' | relative_url }}">← {{ page.section }}</a>
+    <a class="eyebrow back-link" href="{{ page.section | downcase | replace: ' ', '-' | prepend: '/' | append: '/' | relative_url }}">← {{ page.section }}</a>
     <h1>{{ page.title }}</h1>
     <div class="entry-meta">
-      {% if page.date and page.section != 'Work' %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
+      {% if page.date and page.show_date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
       {% if page.status %}<span>{{ page.status }}</span>{% endif %}
       {% for category in page.categories %}<span>{{ category }}</span>{% endfor %}
     </div>

@@ -1,0 +1,5 @@
+# Upload a portrait into images/ and set its path here.
+image: ""
+image_alt: "Dhruva Nagesh"
+# Set a verified Formspree endpoint to enable the contact form.
+contact_endpoint: ""
